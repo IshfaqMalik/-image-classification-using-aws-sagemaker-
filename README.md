@@ -52,9 +52,13 @@ We chose **DenseNet-161** for its strong image classification performance. The `
 
 Best hyperparameters found:
 
+![HPO Screenshot](Images/best_hyperparameters.png).
+
 Training job logs:
 
 ![HPO Screenshot](Images/training_job_logs.png)
+
+![HPO Screenshot](Images/training_jobs.png)
 
 ---
 
@@ -87,6 +91,8 @@ These are passed to the estimator during training:
 * The training job showed **I/O bottlenecks** as seen in GPU utilization plots.
 * Top 3 operations: `copy_`, `contiguous`, `to` (high memory overhead)
 * Rule triggers: `LowGPUUtilization`, `BatchSize` due to smaller batch size (e.g. 32)
+
+![HPO Screenshot](Images/debugging.png)
 
 #### Profiler output:
 
@@ -136,7 +142,7 @@ This code loads a test image, applies the transformation used in training, sends
 
 Example result:
 
-![Inference Example](screenshots/inference_result.png)
+![Inference Example](Images/prediction.png)
 
 ---
 
