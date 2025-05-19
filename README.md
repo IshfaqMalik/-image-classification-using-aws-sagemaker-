@@ -88,11 +88,8 @@ These are passed to the estimator during training:
 
 ### Results
 
-* The training job showed **I/O bottlenecks** as seen in GPU utilization plots.
-* Top 3 operations: `copy_`, `contiguous`, `to` (high memory overhead)
-* Rule triggers: `LowGPUUtilization`, `BatchSize` due to smaller batch size (e.g. 32)
-
-![HPO Screenshot](Images/debugging.png)
+The debugging plot of cross-entropy loss shows a steady decline in both training and validation losses, with validation loss consistently lower—indicating good generalization and no signs of overfitting. Minor training spikes suggest batch-level variance but overall reflect stable and effective learning.
+![HPO Screenshot](Images/debugger_report.png)
 
 #### Profiler output:
 
